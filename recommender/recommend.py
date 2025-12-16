@@ -52,6 +52,7 @@ def recommend_movies(df, genre, keyword, top_n=3):
             result = keyword_filtered
         else:
             # no keyword gets only genre
+            print(f"No movies found {genre} and {keyword}, suggestion based on {genre}.")
             result = genre_filtered
     else:
         # default only genre
