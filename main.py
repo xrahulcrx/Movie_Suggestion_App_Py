@@ -27,7 +27,7 @@ def main():
 
     result = recommend_movies(df, genre, keyword)
 
-    print("\nRecommended Movies:\n")
+    print("\nRecommended Top 3 Movies:\n")
 
     if isinstance(result, str):
         print(result)
