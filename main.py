@@ -22,23 +22,28 @@ def main():
     if df is None:
         return
 
-    genre = input("\nEnter genre (Drama, Action, Crime, etc.): ").strip()
-    keyword = input("Enter keyword (optional – press Enter to skip): ").strip()
+    try:
+        genre = input("\nEnter genre (Drama, Action, Crime, etc.): ").strip()
+        keyword = input("Enter keyword (optional – press Enter to skip): ").strip()
 
-    result = recommend_movies(df, genre, keyword)
+        result = recommend_movies(df, genre, keyword)
 
-    print("\nRecommended Top 3 Movies:\n")
+        print("\nRecommended Top 3 Movies:\n")
 
-    if isinstance(result, str):
-        print(result)
-    else:
-        for _, row in result.iterrows():
-            print(f"""{row['title']} ({int(row['year'])})
-            Rating: {row['rating']}
-            Genre: {", ".join(row['genres'])}
-            Plot:{row['plot']}""")
+        if isinstance(result, str):
+            print(result)
+        else:
+            for _, row in result.iterrows():
+                print(f"""{row['title']} ({int(row['year'])})
+                Rating: {row['rating']}
+                Genre: {", ".join(row['genres'])}
+                Duration: {row['duration']}
+                Plot:{row['plot']}""")
 
-            print("-" * terminal_width)
+                print("-" * terminal_width)
+    except KeyboardInterrupt:
+        print("\n\nProgram interrupted by user. Exiting.")
+
 
 
 if __name__ == "__main__":
