@@ -126,6 +126,7 @@ class SpiderIMDB(scrapy.Spider):
                 date_pub = data.get("datePublished")
                 year = date_pub[:4] if date_pub else "NA"
 
+                #reformat the runtime in json as hh:mm
                 meta_duration = data.get("duration")
                 h = re.search(r"(\d+)H", meta_duration or "")
                 m = re.search(r"(\d+)M", meta_duration or "")
@@ -135,6 +136,7 @@ class SpiderIMDB(scrapy.Spider):
                     else None
                 )
 
+                #keywords from json to sort movies
                 keyword = data.get("keywords")
                 keywords = [k.strip() for k in keyword.split(",")] if keyword else []
 
