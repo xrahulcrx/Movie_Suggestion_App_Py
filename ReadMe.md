@@ -2,36 +2,44 @@
 ## Movie Suggestion App using Py
 
 ### Project Description
+```
 The Movie Suggestion App is a Python code that recommends movies to users based on their preferred genre and keywords.
 The project integrates web scraping, data processing, and recommendation logic using real-world movie data sourced from IMDb.
 
 The application first scrapes movie data from the IMDb Top 250 Movies chart, processes and stores the data, and then provides movie suggestion using based on user input.
+```
 
 ### Features
-
+```
 Scrapes movie data from IMDb using Scrapy and Selenium
 Stores scraped data in a structured format (.jl)
 Uses Pandas for data cleaning and filtering
+```
 
 #### Recommends Top 3 movies based on:
+```
 Genre
 Keywords (IMDb keywords)
 
 Falls back to genre-based suggestions if keywords are not found
+```
 
 ### Concepts Used
-
+```
 Web Scraping (Scrapy, Selenium)
 Data Processing (Pandas)
 Error Handling
 File Handling
 Git & GitHub Version Control
+```
 
 ### Python Libraries Used
+```
 scrapy
 selenium
 pandas
 tqdm
+```
 
 ### Project Structure
 ```
