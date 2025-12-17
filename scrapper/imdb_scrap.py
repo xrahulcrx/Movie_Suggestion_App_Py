@@ -45,7 +45,7 @@ class SpiderIMDB(scrapy.Spider):
         options.add_argument("--disable-blink-features=AutomationControlled")
         options.add_argument("--window-size=1920,1080")
 
-        print("Triggering Selenium using browser")
+        print("Triggering browser using Selenium")
 
         driver = webdriver.Chrome(options=options)
         driver.get("https://www.imdb.com/chart/top/")
