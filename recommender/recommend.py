@@ -11,6 +11,9 @@ def load_movies(filepath):
         # Fix plot
         df["plot"] = df["plot"].fillna("")
 
+        #runtime
+        df["duration"] = df["duration"].fillna("")
+
         # ensure genres is always a list
         df["genres"] = df["genres"].apply(
             lambda x: x if isinstance(x, list) else []
@@ -65,6 +68,7 @@ def recommend_movies(df, genre, keyword, top_n=3):
     return result[[
         "title",
         "plot",
+        "duration",
         "rating",
         "year",
         "genres"
